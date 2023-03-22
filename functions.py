@@ -24,15 +24,18 @@ def split(diccionario):
 
     for llave, vinoDict in diccionario.items():
         llaves=list(vinoDict.keys())
+        vino = {llaves[indice]: list(vinoDict.values())[indice] for indice in range(1,len(vinoDict))}
+
         if vinoDict.get(llaves[0])  == "white":
-            vino = {llaves[indice]: list(vinoDict.values())[indice] for indice in range(1,len(vinoDict))}
+
             vino_blanco.setdefault("Vino blanco nº:" + str(nDatoW), vino)
             nDatoW += 1
+
         if vinoDict.get(llaves[0])== "red": 
-            vino = {llaves[indice]: list(vinoDict.values())[indice] for indice in range(1,len(vinoDict))}
+            
             vino_rosa.setdefault("Vino rosado nº:" + str(nDatoR), vino)
             nDatoR += 1
-    
+
     return vino_blanco, vino_rosa
 
 def reduce(dict, string):
@@ -40,11 +43,16 @@ def reduce(dict, string):
 
     for llave, vino in dict.items():
         llaves = list(vino.keys())
-        print()
-        for llave, valor in vino.items():
-            
-            if  string == list(valor.keys()):
-                lista_valores.append(valor.get(string))
-            else:
-                raise(ValueError("No existe tal propiedad"))
+        if string in llaves:
+            lista_valores.append(vino.get(string))
+        else:
+            raise(ValueError("No existe tal propiedad"))
+
     return lista_valores
+
+
+def silhouette(lista1, lista2):
+    coef  = 0
+
+
+    return coef

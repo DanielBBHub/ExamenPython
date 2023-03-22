@@ -19,6 +19,10 @@ dict_prueba = {
         "ae": 111
     },
 }
+
 blanco, rosado = functions.split(dict_prueba)
-functions.reduce(blanco, "pfna")
-functions.reduce(blanco, "hola")
+functions.reduce(blanco, "ae")
+try:
+    functions.reduce(blanco, "hola")
+except(ValueError):
+    print("No se ha encontrado una ")
