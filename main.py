@@ -1,6 +1,6 @@
 import functions
 
-#functions.read_data("ExamenPython/winequality.csv")
+#dict_prueba = functions.read_data("ExamenPython/winequality.csv")
 
 dict_prueba = {
     "dato1": {
@@ -12,6 +12,13 @@ dict_prueba = {
         "type": "red",
         "pfna": 111,
         "ae": 4888
-    }
+    },
+    "dato3": {
+        "type": "white",
+        "pfna": 0000,
+        "ae": 111
+    },
 }
-functions.split(dict_prueba)
+blanco, rosado = functions.split(dict_prueba)
+functions.reduce(blanco, "pfna")
+functions.reduce(blanco, "hola")

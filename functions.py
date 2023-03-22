@@ -25,16 +25,26 @@ def split(diccionario):
     for llave, vinoDict in diccionario.items():
         llaves=list(vinoDict.keys())
         if vinoDict.get(llaves[0])  == "white":
-            print(llaves)
             vino = {llaves[indice]: list(vinoDict.values())[indice] for indice in range(1,len(vinoDict))}
-            vino_blanco.setdefault("dato" + str(nDatoW), vino)
+            vino_blanco.setdefault("Vino blanco nº:" + str(nDatoW), vino)
             nDatoW += 1
-            print(vino_blanco.items())
         if vinoDict.get(llaves[0])== "red": 
-            print(llaves)
             vino = {llaves[indice]: list(vinoDict.values())[indice] for indice in range(1,len(vinoDict))}
-            vino_rosa.setdefault("dato" + str(nDatoR), vino)
+            vino_rosa.setdefault("Vino rosado nº:" + str(nDatoR), vino)
             nDatoR += 1
-            print(vino_rosa.items())
     
     return vino_blanco, vino_rosa
+
+def reduce(dict, string):
+    lista_valores = list()
+
+    for llave, vino in dict.items():
+        llaves = list(vino.keys())
+        print()
+        for llave, valor in vino.items():
+            
+            if  string == list(valor.keys()):
+                lista_valores.append(valor.get(string))
+            else:
+                raise(ValueError("No existe tal propiedad"))
+    return lista_valores
