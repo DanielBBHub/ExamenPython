@@ -1,3 +1,3 @@
 import functions
 
-functions.read_data("winequality.csv")
+functions.read_data("ExamenPython/winequality.csv")
