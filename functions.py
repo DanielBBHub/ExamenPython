@@ -13,6 +13,9 @@ def read_data(nombre_archivo):
             nDato += 1
         linea = texto.readline()
     
+    if nDato < 10:
+        raise ValueError("Hay menos de 10 muestras con la informacion")
+    
     return vinos
 
 
@@ -32,7 +35,7 @@ def split(diccionario):
             nDatoW += 1
 
         if vinoDict.get(llaves[0])== "red": 
-            
+
             vino_rosa.setdefault("Vino rosado nº:" + str(nDatoR), vino)
             nDatoR += 1
 
